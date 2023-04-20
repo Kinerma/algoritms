@@ -41,7 +41,7 @@ export const StringComponent: React.FC = () => {
                 time += 1000
             }
         }, 1000)
-        const reverse = (arr: IString[], i1: number, i2: number, timer: number) => {
+        const reverse = (arr: IString[], i1: number, i2: number, time: number) => {
             setTimeout(() => {
                 arr[i1].state = ElementStates.Changing
                 arr[i2].state = ElementStates.Changing
