@@ -1,0 +1,18 @@
+.form {
+    display: flex;
+    width: 980px;
+    margin: auto;
+    align-items: center;
+}
+
+.radio {
+    display: flex;
+    gap: 46px;
+}
+
+.button {
+    display: flex;
+    gap: 12px;
+    margin-left: 52px;
+    margin-right: 80px;
+}
