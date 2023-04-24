@@ -1,0 +1,10 @@
+.form {
+    display: flex;
+    width: 829px;
+    margin: auto;
+    gap: 12px;
+}
+
+.button {
+    margin-left: 68px;
+}
