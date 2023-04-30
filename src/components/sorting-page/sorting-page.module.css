@@ -16,3 +16,11 @@
     margin-left: 52px;
     margin-right: 80px;
 }
+
+.columns {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 48px;
+    gap: 10px;
+}
