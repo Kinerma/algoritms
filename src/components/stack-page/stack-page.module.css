@@ -8,3 +8,13 @@
 .button {
     margin-left: 68px;
 }
+
+.circles {
+    display: flex;
+    width: 829px;
+    margin: auto;
+    gap: 16px;
+    flex-wrap: wrap;
+    row-gap: 78px;
+    padding-top: 78px;
+}
