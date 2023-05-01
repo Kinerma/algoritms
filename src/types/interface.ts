@@ -22,3 +22,16 @@ export interface ISorting {
     value: number;
     state: ElementStates
 }
+
+
+export interface IQueue<T> {
+    enqueue: (item: T) => void;
+    dequeue: () => void;
+    clear: () => void;
+    peak: () => T | undefined;
+    getHead: () => number;
+    getTail: () => number;
+    getQueue: () => T[] | undefined[];
+    getLength: () => number;
+    getSize: () => number
+}
