@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 952px;
+}
+
+.value {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 38px;
+}
+
+.index {
+    display: flex;
+    gap: 12px
+}
+
+.valueButton {
+    min-width: 175px;
+}
+
+.indexButton {
+    min-width: 362px;
+}
