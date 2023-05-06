@@ -35,3 +35,27 @@ export interface IQueue<T> {
     getLength: () => number;
     getSize: () => number
 }
+
+export interface ILinkedList<T> {
+    append: (element: T) => void;
+    prepend: (element: T) => void;
+    addByIndex: (element: T, index: number) => void;
+    deleteIndex: (index: number) => void;
+    deleteHead: (element: T) => void;
+    deleteTail: (element: T) => void;
+    getSize: () => number;
+    print: () => void
+}
+
+export enum circleAction {
+    Add = 'add',
+    Delete = 'delete',
+    Default = 'default'
+}
+
+export type TListLetter = {
+    value: string;
+    state: ElementStates;
+    action?: circleAction;
+    circleAction?: {value: string}
+}

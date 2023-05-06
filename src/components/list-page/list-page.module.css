@@ -23,3 +23,34 @@
 .indexButton {
     min-width: 362px;
 }
+
+.elements {
+    display: flex;
+    justify-content: center;
+    max-width: 952px;
+    margin: auto;
+    gap: 16px;
+    padding-top: 120px;
+}
+
+.circle {
+    position: relative;
+}
+
+.arrow {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.smallCircleAdd {
+    position: absolute;
+    top: -60px;
+    left: 12px;
+}
+
+.smallCircleDelete {
+    position: absolute;
+    bottom: -95px;
+    left: 12px;
+}

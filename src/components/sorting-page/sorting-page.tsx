@@ -6,7 +6,7 @@ import {ISorting} from "../../types/interface";
 import {Button} from "../ui/button/button";
 import {Column} from "../ui/column/column";
 import {RadioInput} from "../ui/radio-input/radio-input";
-import {SHORT_DELAY_IN_MS} from "../../constants/delays";
+import {DELAY_IN_MS} from "../../constants/delays";
 import {Direction} from "../../types/direction";
 
 export const SortingPage: React.FC = () => {
@@ -44,7 +44,7 @@ export const SortingPage: React.FC = () => {
                 arr[i].state = ElementStates.Changing
                 arr[j].state = ElementStates.Changing
                 setArray([...arr])
-                await shortDelay(SHORT_DELAY_IN_MS)
+                await shortDelay(DELAY_IN_MS)
                 if (sorting === 'ascending' ? arr[j].value < arr[indexMin].value : arr[j].value > arr[indexMin].value) {
                     indexMin = j
                 }
@@ -67,7 +67,7 @@ export const SortingPage: React.FC = () => {
                 arr[j].state = ElementStates.Changing
                 arr[j + 1].state = ElementStates.Changing
                 setArray([...arr])
-                await shortDelay(SHORT_DELAY_IN_MS)
+                await shortDelay(DELAY_IN_MS)
                 if (sorting === 'ascending' ? arr[j + 1].value < arr[j].value : arr[j + 1].value > arr[j].value) {
                     swap(arr, j, j + 1)
                 }
