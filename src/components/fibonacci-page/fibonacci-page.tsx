@@ -46,7 +46,8 @@ export const FibonacciPage: React.FC = () => {
         setArray([])
         const fibSequence = fibonacci(Number(inputValue))
         fibonacciArray(fibSequence)
-
+        setInputValue('')
+        setIsLoading(false)
     }
 
   return (

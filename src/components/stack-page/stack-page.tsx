@@ -47,6 +47,7 @@ export const StackPage: React.FC = () => {
         setInProcess({add: true, remove: false})
         await addCircle(value)
         setInProcess({add: false, remove: false})
+        setValue('')
     }
 
 
@@ -55,6 +56,7 @@ export const StackPage: React.FC = () => {
       <form className={stackStyle.form} onSubmit={handleSubmit}>
         <Input type='text'
                maxLength={4}
+               value={value}
                isLimitText
                onChange={changeInput}
                disabled={inProcess.add || inProcess.remove} />
