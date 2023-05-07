@@ -1,0 +1,14 @@
+.form {
+    display: flex;
+    width: 522px;
+    gap: 12px;
+    margin: auto;
+}
+
+.circles {
+    display: flex;
+    margin: auto;
+    width: 522px;
+    padding-top: 120px;
+    gap: 16px;
+}

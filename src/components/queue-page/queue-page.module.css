@@ -1,0 +1,20 @@
+.form {
+    display: flex;
+    width: 829px;
+    margin: auto;
+    gap: 12px;
+}
+
+.button {
+    margin-left: 68px;
+}
+
+.circle {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 656px;
+    margin: auto;
+    gap: 16px;
+    row-gap: 78px;
+    padding-top: 48px;
+}

@@ -1,0 +1,56 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 952px;
+}
+
+.value {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 38px;
+}
+
+.index {
+    display: flex;
+    gap: 12px
+}
+
+.valueButton {
+    min-width: 175px;
+}
+
+.indexButton {
+    min-width: 362px;
+}
+
+.elements {
+    display: flex;
+    justify-content: center;
+    max-width: 952px;
+    margin: auto;
+    gap: 16px;
+    padding-top: 120px;
+}
+
+.circle {
+    position: relative;
+}
+
+.arrow {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.smallCircleAdd {
+    position: absolute;
+    top: -60px;
+    left: 12px;
+}
+
+.smallCircleDelete {
+    position: absolute;
+    bottom: -95px;
+    left: 12px;
+}
