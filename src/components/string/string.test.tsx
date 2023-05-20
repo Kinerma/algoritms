@@ -1,0 +1,2 @@
+import {StringComponent} from './string'
+
