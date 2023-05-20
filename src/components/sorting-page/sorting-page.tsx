@@ -6,8 +6,8 @@ import {ISorting} from "../../types/interface";
 import {Button} from "../ui/button/button";
 import {Column} from "../ui/column/column";
 import {RadioInput} from "../ui/radio-input/radio-input";
-import {DELAY_IN_MS} from "../../constants/delays";
 import {Direction} from "../../types/direction";
+import {selectionSort, bubbleSort} from "./sorting";
 
 export const SortingPage: React.FC = () => {
     const [arr, setArray] = useState<ISorting[]>([])
@@ -27,56 +27,17 @@ export const SortingPage: React.FC = () => {
         evt.preventDefault()
         randomArr()
     }
-    const shortDelay = (ms: number) => {
-        return new Promise(resolve => setTimeout(resolve, ms))
-    }
-    const swap = (arr: ISorting[], firstIndex: number, secondIndex: number): void => {
-        const temp = arr[firstIndex];
-        arr[firstIndex] = arr[secondIndex];
-        arr[secondIndex] = temp;
-    };
-    const selectionSort = async (arr: ISorting[], sorting: string) => {
+
+    const sortingPages = async (sorting: string) => {
         setIsLoading(true)
         setSorting(sorting)
-        for (let i = 0; i < arr.length; i++) {
-            let indexMin = i
-            for (let j = i; j < arr.length; j++) {
-                arr[i].state = ElementStates.Changing
-                arr[j].state = ElementStates.Changing
-                setArray([...arr])
-                await shortDelay(DELAY_IN_MS)
-                if (sorting === 'ascending' ? arr[j].value < arr[indexMin].value : arr[j].value > arr[indexMin].value) {
-                    indexMin = j
-                }
-                arr[i].state = ElementStates.Default
-                arr[j].state = ElementStates.Default
-                setArray([...arr])
-            }
-            swap(arr, i, indexMin)
-            arr[i].state = ElementStates.Modified
+
+        if (sorting === Direction.Ascending) {
+            verification === "selection" ? await  selectionSort(arr, Direction.Ascending, setArray) : await bubbleSort(arr, Direction.Ascending, setArray)
+        } else {
+            verification === "selection" ? await  selectionSort(arr, Direction.Descending, setArray) : await bubbleSort(arr, Direction.Descending, setArray)
         }
-        setArray([...arr])
-        setSorting('')
-        setIsLoading(false)
-    }
-    const bubbleSort = async (arr: ISorting[], sorting: string) => {
-        setIsLoading(true)
-        setSorting(sorting)
-        for (let i = 0; i < arr.length; i++) {
-            for (let j = 0; j < arr.length - i - 1; j++) {
-                arr[j].state = ElementStates.Changing
-                arr[j + 1].state = ElementStates.Changing
-                setArray([...arr])
-                await shortDelay(DELAY_IN_MS)
-                if (sorting === 'ascending' ? arr[j + 1].value < arr[j].value : arr[j + 1].value > arr[j].value) {
-                    swap(arr, j, j + 1)
-                }
-                arr[j].state = ElementStates.Default
-                arr[j + 1].state = ElementStates.Default
-            }
-            arr[arr.length - i - 1].state = ElementStates.Modified
-        }
-        setArray([...arr])
+
         setSorting('')
         setIsLoading(false)
     }
@@ -106,12 +67,12 @@ export const SortingPage: React.FC = () => {
           <div className={sortingStyle.button}>
             <Button text='По возрастанию'
                     sorting={Direction.Ascending}
-                    onClick={() => {verification === 'selection' ? selectionSort(arr, Direction.Ascending) : bubbleSort(arr, Direction.Ascending)}}
+                    onClick={() => {sortingPages(Direction.Ascending)}}
                     isLoader={sorting === Direction.Ascending}
                     disabled={isLoading} />
             <Button text='По убыванию'
                     sorting={Direction.Descending}
-                    onClick={() => {verification === 'selection' ? selectionSort(arr, Direction.Descending) : bubbleSort(arr, Direction.Descending)}}
+                    onClick={() => {sortingPages(Direction.Descending)}}
                     isLoader={sorting === Direction.Descending}
                     disabled={isLoading} />
           </div>
