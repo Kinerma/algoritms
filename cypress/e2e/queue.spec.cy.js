@@ -1,4 +1,4 @@
-import {circle, defaultColor, changingColor, circle_content} from "../constants";
+import {circle, defaultColor, changingColor} from "../constants";
 
 describe('Тестирование Очередь', () => {
   beforeEach(() => {
