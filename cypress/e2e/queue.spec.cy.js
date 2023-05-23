@@ -11,10 +11,29 @@ describe('Тестирование Очередь', () => {
   })
 
   it('Проверка правильности добавления элемента в очередь', () => {
+    cy.get("input").type("12")
+    cy.contains("Добавить").should("be.visible").click()
 
   })
 
   it('Проверка правильности удаления элемента из очереди', () => {
+    cy.get("input").type("12")
+    cy.contains("Добавить").should("be.visible").click()
+    cy.wait(500)
+    cy.get("input").type("13")
+    cy.contains("Добавить").should("be.visible").click()
+    cy.wait(500)
+    cy.get("input").type("14")
+    cy.contains("Добавить").should("be.visible").click()
+    cy.wait(500)
+
+    cy.get(circle).as("circle").first()
+    cy.contains("Удалить").should("be.visible").click()
+    cy.get(`@circle`).should('have.css', 'border-color', changingColor).contains('1')
+    cy.wait(500)
+    cy.get(`@circle`).should('have.css', 'border-color', defaultColor).should('not.have.text')
+    cy.get(`@circle`).eq(0).prev().should('not.have.text', 'head')
+    cy.get(`@circle`).eq(1).prev().should('have.text', 'head')
 
   })
 
