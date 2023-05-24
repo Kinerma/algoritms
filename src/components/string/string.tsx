@@ -74,11 +74,13 @@ export const StringComponent: React.FC = () => {
                maxLength={11}
                isLimitText={true}
                id="string-input"
-               value={input} />
+               value={input}
+               data-testid="input"/>
         <Button onClick={handleClick}
                 text="Развернуть"
                 disabled={input.length > 0 ? false : true}
-                isLoader={isLoading} />
+                isLoader={isLoading}
+                data-testid="reverse"/>
       </form>
       <div className={stringStyles.circles}>
         {displayArr.length > 0 && displayArr.map((el, i) => {

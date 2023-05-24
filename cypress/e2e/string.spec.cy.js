@@ -26,6 +26,7 @@ describe('Тестирование Строки', () => {
     cy.tick(1000)
 
     cy.get("@circle").should(($circle) => {
+      expect($circle).to.have.length(4)
       expect($circle.eq(0)).to.have.text("1").and.css("border-color", changingColor)
       expect($circle.eq(1)).to.have.text("2").and.css("border-color", defaultColor)
       expect($circle.eq(2)).to.have.text("3").and.css("border-color", defaultColor)
@@ -34,6 +35,7 @@ describe('Тестирование Строки', () => {
     cy.tick(1000)
 
     cy.get("@circle").should(($circle) => {
+      expect($circle).to.have.length(4)
       expect($circle.eq(0)).to.have.text("4").and.css("border-color", modifiedColor)
       expect($circle.eq(1)).to.have.text("2").and.css("border-color", changingColor)
       expect($circle.eq(2)).to.have.text("3").and.css("border-color", changingColor)
@@ -42,6 +44,7 @@ describe('Тестирование Строки', () => {
     cy.tick(1000)
 
     cy.get("@circle").should(($circle) => {
+      expect($circle).to.have.length(4)
       expect($circle.eq(0)).to.have.text("4").and.css("border-color", modifiedColor)
       expect($circle.eq(1)).to.have.text("3").and.css("border-color", modifiedColor)
       expect($circle.eq(2)).to.have.text("2").and.css("border-color", modifiedColor)
