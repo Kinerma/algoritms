@@ -18,6 +18,7 @@ exports[`Компонент Circle Корректная отрисовка с re
       >
         <p
           className="text text_type_circle text_color_input letter"
+          data-testid="letter"
         />
       </div>
       <p
@@ -33,6 +34,7 @@ exports[`Компонент Circle Корректная отрисовка с re
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="letter"
     />
   </div>
   <p
@@ -56,6 +58,7 @@ exports[`Компонент Circle Корректная отрисовка с re
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="letter"
     />
   </div>
   <p
@@ -75,6 +78,7 @@ exports[`Компонент Circle Корректная отрисовка с re
       >
         <p
           className="text text_type_circle text_color_input letter"
+          data-testid="letter"
         />
       </div>
       <p
@@ -100,6 +104,7 @@ exports[`Компонент Circle Корректная отрисовка эл�
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="letter"
     />
   </div>
   <p
@@ -123,6 +128,7 @@ exports[`Компонент Circle Корректная отрисовка эл�
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="letter"
     />
   </div>
   <p
@@ -146,6 +152,7 @@ exports[`Компонент Circle Корректная отрисовка эл�
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="letter"
     />
   </div>
   <p
@@ -169,6 +176,7 @@ exports[`Компонент Circle Корректная отрисовка эл�
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="letter"
     />
   </div>
   <p
@@ -194,6 +202,7 @@ exports[`Компонент Circle Корректная отрисовка эл�
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="letter"
     />
   </div>
   <p
@@ -217,6 +226,7 @@ exports[`Компонент Circle Корректная отрисовка эл�
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="letter"
     />
   </div>
   <p
@@ -242,6 +252,7 @@ exports[`Компонент Circle Корректная отрисовка эл�
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="letter"
     />
   </div>
   <p
@@ -267,6 +278,7 @@ exports[`Компонент Circle Корректная отрисовка эл�
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="letter"
     >
       text
     </p>
@@ -292,6 +304,7 @@ exports[`Компонент Circle Корректная отрисовка эл�
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="letter"
     />
   </div>
   <p

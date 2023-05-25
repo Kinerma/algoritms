@@ -73,7 +73,7 @@ export const StringComponent: React.FC = () => {
         <Input onChange={handleInput}
                maxLength={11}
                isLimitText={true}
-               id="string-input"
+               id="input"
                value={input}
                data-testid="input"/>
         <Button onClick={handleClick}
