@@ -11,19 +11,19 @@ describe('Тестирование Очередь', () => {
   })
 
   it('Проверка правильности добавления элемента в очередь', () => {
-    cy.get("input").type("12")
+    cy.get("input").type("12").should('have.value', '12')
     cy.contains("Добавить").should("be.visible").click()
 
   })
 
   it('Проверка правильности удаления элемента из очереди', () => {
-    cy.get("input").type("12")
+    cy.get("input").type("12").should('have.value', '12')
     cy.contains("Добавить").should("be.visible").click()
     cy.wait(500)
-    cy.get("input").type("13")
+    cy.get("input").type("13").should('have.value', '13')
     cy.contains("Добавить").should("be.visible").click()
     cy.wait(500)
-    cy.get("input").type("14")
+    cy.get("input").type("14").should('have.value', '14')
     cy.contains("Добавить").should("be.visible").click()
     cy.wait(500)
 
@@ -39,11 +39,11 @@ describe('Тестирование Очередь', () => {
 
   it('Проверка поведения кнопки «Очистить».', () => {
     cy.clock()
-    cy.get("input").type("123")
+    cy.get("input").type("123").should('have.value', '123')
     cy.contains("Добавить").should("be.visible").click()
     cy.wait(500)
 
-    cy.get("input").type("15")
+    cy.get("input").type("15").should('have.value', '15')
     cy.contains("Добавить").should("be.visible").click()
     cy.wait(500)
 

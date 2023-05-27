@@ -152,7 +152,8 @@ export const ListPage: React.FC = () => {
                  maxLength={4}
                  isLimitText
                  onChange={onChangeValue}
-                 disabled={stateList.addItem} />
+                 disabled={stateList.addItem}
+                 id='inputValue' />
           <Button text='Добавить в head'
                   extraClass={listStyle.valueButton}
                   onClick={addHead}
@@ -176,7 +177,8 @@ export const ListPage: React.FC = () => {
           <Input placeholder='Введите индекс'
                  value={inputIndex}
                  onChange={onChangeIndex}
-                 type='number' />
+                 type='number'
+                 id='inputIndex' />
           <Button text='Добавить по индексу'
                   extraClass={listStyle.indexButton}
                   onClick={addIndex}
@@ -191,14 +193,14 @@ export const ListPage: React.FC = () => {
       </form>
       <div className={listStyle.elements}>
         {arrayCharacters.map((letter, index) => (
-            <div className={listStyle.circle} key={index}>
+            <div className={listStyle.circle} key={index} data-cy='circles'>
               {letter.action === circleAction.Add && (
                   <Circle extraClass={listStyle.smallCircleAdd}
                           isSmall
                           letter={letter.circleAction?.value}
                           state={ElementStates.Changing}  />
               )}
-              <div className={listStyle.arrow}>
+              <div className={listStyle.arrow} >
                 <Circle letter={letter.value}
                         index={index}
                         head={index === 0 && letter.action !== circleAction.Add ? 'head' : ''}
@@ -207,10 +209,12 @@ export const ListPage: React.FC = () => {
                 {index < arrayCharacters.length - 1 && <ArrowIcon />}
               </div>
               {letter.action === circleAction.Delete && (
+                  <div data-cy='smallCircle' >
                   <Circle extraClass={listStyle.smallCircleDelete}
                           isSmall
                           letter={letter.circleAction?.value}
                           state={ElementStates.Changing} />
+                  </div>
               )}
             </div>
         ))}

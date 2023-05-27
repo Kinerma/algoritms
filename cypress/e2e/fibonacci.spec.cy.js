@@ -12,7 +12,7 @@ describe('Тестирование Фибоначчи', () => {
     cy.get("@button").should("be.disabled")
   })
   it('Проверка корректной генерации чисел', () => {
-    cy.get('input').type('6')
+    cy.get('input').type('6').should('have.value', '6')
     cy.get("form").find("button").should("not.be.disabled").click()
     cy.get('[class^="circle_circle"]').as("circles")
     cy.get("@circles").should(($circles) => {
