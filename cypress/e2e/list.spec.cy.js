@@ -1,4 +1,4 @@
-import {circle, circleContent, defaultColor, changingColor} from "../constants";
+import {circle, circleContent, defaultColor, changingColor, circleSmall} from "../constants";
 
 describe('Тестирование связного списка', () => {
   beforeEach(() => {
@@ -100,7 +100,8 @@ describe('Тестирование связного списка', () => {
     cy.get('@border').eq(2).should('have.css', 'border-color', changingColor)
     cy.wait(500)
     cy.get('@border').eq(2).should('have.text', '').should('have.css', 'border-color', defaultColor)
-    cy.get("[class*=circle_small]").should('have.value', '').should('have.css', 'border-color', changingColor)
+    cy.get(circleSmall).as("small")
+    cy.get("@small").should('have.value', '').should('have.css', 'border-color', changingColor)
     cy.wait(500)
     cy.get('@border').should('have.length', 3)
     cy.get(circleContent).as("content")

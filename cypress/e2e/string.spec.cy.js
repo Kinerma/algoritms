@@ -13,7 +13,7 @@ describe('Тестирование Строки', () => {
     cy.clock()
     cy.get("input").type("1234").should("have.value", "1234")
     cy.contains('Развернуть').should("be.visible").click()
-    cy.wait(1000)
+    cy.wait(500)
 
     cy.get(circle).as("circle")
     cy.get("@circle").should(($circle) => {
@@ -23,7 +23,7 @@ describe('Тестирование Строки', () => {
       expect($circle.eq(2)).to.have.text("3").and.css("border-color", defaultColor)
       expect($circle.eq(3)).to.have.text("4").and.css("border-color", defaultColor)
     })
-    cy.wait(1000)
+    cy.wait(500)
 
     cy.get("@circle").should(($circle) => {
       expect($circle).to.have.length(4)
@@ -32,7 +32,7 @@ describe('Тестирование Строки', () => {
       expect($circle.eq(2)).to.have.text("3").and.css("border-color", defaultColor)
       expect($circle.eq(3)).to.have.text("4").and.css("border-color", changingColor)
     })
-    cy.wait(1000)
+    cy.wait(500)
 
     cy.get("@circle").should(($circle) => {
       expect($circle).to.have.length(4)
@@ -41,7 +41,7 @@ describe('Тестирование Строки', () => {
       expect($circle.eq(2)).to.have.text("3").and.css("border-color", changingColor)
       expect($circle.eq(3)).to.have.text("1").and.css("border-color", modifiedColor)
     })
-    cy.wait(1000)
+    cy.wait(500)
 
     cy.get("@circle").should(($circle) => {
       expect($circle).to.have.length(4)

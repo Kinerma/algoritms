@@ -1,4 +1,4 @@
-import {circle, defaultColor, changingColor} from "../constants";
+import {circle, defaultColor, changingColor, circleContent} from "../constants";
 
 describe('Тестирование Очередь', () => {
   beforeEach(() => {
@@ -11,9 +11,17 @@ describe('Тестирование Очередь', () => {
   })
 
   it('Проверка правильности добавления элемента в очередь', () => {
-    cy.get("input").type("12").should('have.value', '12')
-    cy.contains("Добавить").should("be.visible").click()
-
+    for (let j = 0; j < 7; j++) {
+      cy.get("input").should('be.empty').type(j).wait(500)
+      cy.contains("Добавить").should("be.visible").click()
+      cy.get(circle).as("circle")
+      cy.get('[data-cy="border"]').as('border')
+      cy.get('@border').eq(j).should('have.text', j).should('have.css', 'border-color', changingColor).parent().should("contain", "tail")
+      cy.wait(500)
+      cy.get('@border').eq(j).should("have.css", "border-color", defaultColor)
+    }
+    cy.get(circleContent).as("content")
+    cy.get('@content').first().contains('head').should('contain', 'head')
   })
 
   it('Проверка правильности удаления элемента из очереди', () => {
