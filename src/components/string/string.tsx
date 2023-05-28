@@ -62,14 +62,9 @@ export const StringComponent: React.FC = () => {
         setInput(value)
     }
 
-    const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
-        evt.preventDefault()
-        handleClick()
-    }
-
   return (
     <SolutionLayout title="Строка">
-      <form className={stringStyles.form} onSubmit={handleSubmit}>
+      <form className={stringStyles.form} >
         <Input onChange={handleInput}
                maxLength={11}
                isLimitText={true}
@@ -78,7 +73,7 @@ export const StringComponent: React.FC = () => {
                data-testid="input"/>
         <Button onClick={handleClick}
                 text="Развернуть"
-                disabled={input.length > 0 ? false : true}
+                disabled={input.length <= 0}
                 isLoader={isLoading}
                 data-testid="reverse"/>
       </form>

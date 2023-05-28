@@ -47,7 +47,7 @@ export const FibonacciPage: React.FC = () => {
         const fibSequence = fibonacci(Number(inputValue))
         fibonacciArray(fibSequence)
         setInputValue('')
-        setIsLoading(false)
+        setIsLoading(true)
     }
 
   return (
@@ -56,13 +56,13 @@ export const FibonacciPage: React.FC = () => {
         <Input type='number'
                max={19}
                min={1}
-               isLimitText
+               isLimitText={true}
                onChange={onChange}
                value={inputValue} />
         <Button text='Рассчитать'
                 isLoader={isLoading}
                 type='submit'
-                disabled={!!!inputValue}/>
+                disabled={!inputValue || Number(inputValue) < 1 || Number(inputValue) > 19} />
       </form>
       <div className={fibonacciStyle.circle}>
         {array?.map((item, index) => {
