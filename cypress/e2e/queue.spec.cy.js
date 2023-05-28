@@ -38,7 +38,6 @@ describe('Тестирование Очередь', () => {
   })
 
   it('Проверка поведения кнопки «Очистить».', () => {
-    cy.clock()
     cy.get("input").type("123").should('have.value', '123')
     cy.contains("Добавить").should("be.visible").click()
     cy.wait(500)
