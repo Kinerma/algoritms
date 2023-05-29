@@ -167,11 +167,13 @@ export const ListPage: React.FC = () => {
           <Button text='Удалить в head'
                   extraClass={listStyle.valueButton}
                   onClick={deleteHead}
-                  isLoader={stateList.deleteHead} />
+                  isLoader={stateList.deleteHead}
+                  disabled={!arrayCharacters.length || stateList.addItem} />
           <Button text='Удалить в tail'
                   extraClass={listStyle.valueButton}
                   onClick={deleteTail}
-                  isLoader={stateList.deleteTail} />
+                  isLoader={stateList.deleteTail}
+                  disabled={!arrayCharacters.length || stateList.addItem}/>
         </div>
         <div className={listStyle.index}>
           <Input placeholder='Введите индекс'

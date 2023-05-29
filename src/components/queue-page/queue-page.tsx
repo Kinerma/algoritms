@@ -17,11 +17,13 @@ export const QueuePage: React.FC = () => {
     const [tail, setTail] = useState(queue.getTail())
     const [length, setLength] = useState(queue.getLength())
     const [count, setCount] = useState<number>(-1)
+    const [isLoading, setIsLoading] = useState(false)
 
     const shortDelay = (ms: number) => {
         return new Promise(resolve => setTimeout(resolve, ms))
     }
     const enqueue = async (item: string) => {
+        setIsLoading(true)
         setInput('')
         queue.enqueue(item)
         setArray(queue.getQueue())
@@ -31,8 +33,10 @@ export const QueuePage: React.FC = () => {
         await shortDelay(SHORT_DELAY_IN_MS)
         setCount(-1)
         await shortDelay(SHORT_DELAY_IN_MS)
+        setIsLoading(false)
     }
     const dequeue = async () => {
+        setIsLoading(true)
         queue.dequeue()
         setArray(queue.getQueue())
         setCount(head & queue.getSize())
@@ -41,6 +45,7 @@ export const QueuePage: React.FC = () => {
         setLength(queue.getLength())
         setCount(-1)
         await shortDelay(SHORT_DELAY_IN_MS)
+        setIsLoading(false)
     }
     const clearQueue = () => {
         queue.clear()
@@ -65,9 +70,11 @@ export const QueuePage: React.FC = () => {
         <Button type='submit'
                 text='Добавить'
                 onClick={() => enqueue(input)}
+                isLoader={isLoading}
                 disabled={input === '' || queue.getSize() === length} />
         <Button text='Удалить'
                 onClick={dequeue}
+                isLoader={isLoading}
                 disabled={length === 0} />
         <Button type='submit'
                 text='Очистить'
