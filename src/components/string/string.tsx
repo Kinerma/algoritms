@@ -62,9 +62,17 @@ export const StringComponent: React.FC = () => {
         setInput(value)
     }
 
+    const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
+        evt.preventDefault()
+        setIsLoading(true)
+        handleClick()
+        setIsLoading(false)
+        setInput('')
+    }
+
   return (
     <SolutionLayout title="Строка">
-      <form className={stringStyles.form} >
+      <form className={stringStyles.form} onSubmit={handleSubmit} >
         <Input onChange={handleInput}
                maxLength={11}
                isLimitText={true}
