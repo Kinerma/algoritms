@@ -64,21 +64,26 @@ export const StringComponent: React.FC = () => {
 
     const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
         evt.preventDefault()
+        setIsLoading(true)
         handleClick()
+        setIsLoading(false)
+        setInput('')
     }
 
   return (
     <SolutionLayout title="Строка">
-      <form className={stringStyles.form} onSubmit={handleSubmit}>
+      <form className={stringStyles.form} onSubmit={handleSubmit} >
         <Input onChange={handleInput}
                maxLength={11}
                isLimitText={true}
-               id="string-input"
-               value={input} />
+               id="input"
+               value={input}
+               data-testid="input"/>
         <Button onClick={handleClick}
                 text="Развернуть"
-                disabled={input.length > 0 ? false : true}
-                isLoader={isLoading} />
+                disabled={input.length <= 0}
+                isLoader={isLoading}
+                data-testid="reverse"/>
       </form>
       <div className={stringStyles.circles}>
         {displayArr.length > 0 && displayArr.map((el, i) => {
